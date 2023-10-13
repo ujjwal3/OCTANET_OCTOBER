@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+ <style>
+    header {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)),
+    url(/Landing_Page/image.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 700px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+nav {
+  width: 100%;
+  height: 100px;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.logo {
+
+  padding-top: 35px;
+  padding-right: 60px;
+
+}
+.menu a {
+  text-decoration: none;
+  color: white;
+  padding: 10px 70px;
+  font-size: 17px;
+  position: relative;
+}
+.menu a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  border-bottom: 2px solid rgba(94, 17, 167, 0.699);
+  transition: 0.4s linear;
+}
+.menu a:hover::before {
+  width: 90%;
+}
+.register a {
+  text-decoration: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 15px;
+  background: rgba(94, 17, 167, 0.699);
+  border-radius: 7px;
+  transition: 0.4s;
+}
+.register a:hover {
+  background: transparent;
+  border: 1px solid rgba(94, 17, 167, 0.699);
+}
+.header_text {
+  max-width: 650px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+.header_text span {
+  letter-spacing: 5px;
+}
+.header_text h1 {
+  font-size: 3.5em;
+}
+.header_text a {
+  text-decoration: none;
+  background: rgba(11, 185, 20, 0.527);
+  color: white;
+  padding: 10px 20px;
+  letter-spacing: 5px;
+  transition: 0.4s;
+}
+.header_text a:hover {
+  background: transparent;
+  border: 2px solid rgba(11, 185, 20, 0.527);
+}
+
+
+ </style>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="/Landing_Page/logo.png" alt="" height="150px" width="150px">
+            </div>
+            <div class="menu">
+                <a href="#">Home</a>
+                <a href="#">Offers</a>
+                <a href="#">Other Services</a>
+                <a href="#">About</a>
+            </div>
+            <div class="register">
+                <a href="#">Register</a>
+            </div>
+        </nav>
+
+        <section class="header_text">
+            <span>Enjoy</span>
+            <h1>International Travel Agency</h1>
+            <br>
+            <a href="">Book Your Trip</a>
+        </section>
+    </header>
+    <footer>
+        
+    </footer>
+</body>
+
+</html>
