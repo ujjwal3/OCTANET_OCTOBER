@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<head>
+    <title>ToDo</title>
+    <style>
+        #todo {
+            text-align: center;
+            font-size: 50px;
+            background-color: rgb(60, 169, 199);
+            color: white;
+        }
+
+        #tasklist {
+            text-align: center;
+        }
+
+
+        .delete-button {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="todo">
+        <span class="heading">To Do List</span>
+        <br>
+        <input type="text" name="" id="input-text" placeholder="Add New Task">
+        <button id="btn-1" onclick="addTask()">Add</button>
+    </div>
+    <div id="tasklist">
+        <ul id="task-list"></ul>
+    </div>
+</body>
+<script>
+    const addedTasks = [];
+
+    function addTask() {
+        const taskInput = document.getElementById('input-text');
+        const taskList = document.getElementById('task-list');
+
+        var taskName = taskInput.value;
+
+        if (taskName) {
+            addedTasks.push(taskName);
+
+            const listItem = document.createElement('li');
+            listItem.textContent = taskName;
+
+
+            const deleteButton = document.createElement('button');
+            deleteButton.textContent = "Delete";
+            deleteButton.className = "delete-button";
+            deleteButton.addEventListener("click", function () {
+                deleteTask(listItem);
+            });
+
+            listItem.appendChild(deleteButton);
+            taskList.appendChild(listItem);
+
+            taskInput.value = '';
+            alert(taskName + " Added to Task List");
+        }
+    }
+
+    function deleteTask(taskItem) {
+
+        const taskName = taskItem.textContent.split("Delete")[0].trim();
+        const taskIndex = addedTasks.indexOf(taskName);
+        if (taskIndex !== -1) {
+            addedTasks.splice(taskIndex, 1);
+        }
+
+
+        taskItem.remove();
+    }
+</script>
+
+</html>
